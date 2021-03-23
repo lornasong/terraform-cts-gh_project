@@ -4,7 +4,7 @@ This Terraform module creates a GitHub repo and projects. Using this module in a
 
 ## Feature
 
-The module uses the `github` Terraform provider to create a repository named 'cts-labels' in the configured GitHub account. It then creates GitHub TODO: Consul-pink issue labels within this repository. The labels are named after the monitored Consul service instances and have the description of the service instance address and port.
+The module uses the `github` Terraform provider to create a repository named 'cts-labels' in the configured GitHub account. It then creates GitHub projects within the repository. The projects are named after the monitored Consul service instances and project description is various service information.
 
 ## Requirements
 
@@ -38,10 +38,10 @@ example.hcl
 ```hcl
 task {
   name           = "task_b"
-  source         = "lornasong/gh_project/cts"
-  version        = "0.0.1"
-  providers      = ["github"]
   services       = ["api"]
+  providers      = ["github"]
+  version        = "0.0.1"
+  source         = "lornasong/gh_project/cts"
 }
 
 terraform_provider "github" {
