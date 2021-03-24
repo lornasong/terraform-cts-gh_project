@@ -41,7 +41,7 @@ task {
   services       = ["api"]
   providers      = ["github"]
   version        = "0.0.1"
-  source         = "lornasong/gh_project/cts"
+  source         = "lornasong/cts_project/github"
 }
 
 terraform_provider "github" {
